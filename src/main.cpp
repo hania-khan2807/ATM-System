@@ -35,7 +35,14 @@ int main() {
     // Authenticate user
     Account* currentAccount = authenticateUser(atm);
     if (!currentAccount) {
-        cout << "\nAuthentication failed. Exiting..." << endl;
+     
+        cout << "\033[1;32m----------------------------------------------------------------------------------------------\033[0m" << endl;
+cout << "\033[1;93m                               TRANSCATION FAILED.Please try again later                                \033[0m" << endl;
+cout << "\033[1;92m        Your Card has been Temporarily Blocked due to Multiple Incorrect PIN attempts                    \033[0m" << endl;
+cout << "\033[1;92m                               Card Retained(Take your Card)                                 \033[0m" << endl;
+cout << "\033[1;32m----------------------------------------------------------------------------------------------\033[0m" << endl;
+cout << "\033[1;92m                                <<  Contact your BANK  >>                                 \033[0m" << endl;
+cout << "\033[1;32m----------------------------------------------------------------------------------------------\033[0m" << endl;
         return 1;
     }
 
@@ -45,12 +52,18 @@ int main() {
         displayMainMenu();
         
         int choice;
-        cout << "Enter your choice (1-5): ";
+        
+               
+cout << "\033[1;93m                               Enter your choice (1-5):                                  \033[0m" << endl;
+ cout << "\033[1;37m==============================================================================================\033[0m" << endl;
         
         // Validate input
         while (!(cin >> choice) || choice < 1 || choice > 5) {
             clearInputBuffer();
-            cout << "Invalid input. Please enter a number between 1 and 5: ";
+           
+cout << "\033[1;35m()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()\033[0m" << endl;
+cout << "\033[1;93m                               Invalid input. Please enter a number between 1 and 5                \033[0m" << endl;
+cout << "\033[1;35m()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()\033[0m" << endl;
         }
         clearInputBuffer();
 
@@ -68,7 +81,9 @@ int main() {
                 handleTransactionHistory(currentAccount);
                 break;
             case 5:
-                cout << "\nThank you for using our ATM. Goodbye!" << endl;
+                cout << "\033[1;35m$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\033[0m" << endl;
+    cout << "\033[1;93m                             Thank you for using our ATM. Goodbye!                           \033[0m" << endl;
+               cout << "\033[1;35m$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\033[0m" << endl;
                 running = false;
                 break;
         }
@@ -81,7 +96,9 @@ int main() {
     return 0;
 }
 
+
 void displayWelcomeScreen() {
+<<<<<<< HEAD
     system("cls"); // For Windows to clear the terminal (use "clear" on Linux/Mac)
     cout << "==============================================================" << endl;
     cout << "||                                                          ||" << endl;
@@ -92,16 +109,37 @@ void displayWelcomeScreen() {
     cout << "||               Powered by C++ and OOP 🧠                  ||" << endl;
     cout << "||                                                          ||" << endl;
     cout << "==============================================================" << endl << endl;
+=======
+    system("cls");  // For Windows to clear the terminal (use "clear" on Linux/Mac)
+    
+    // Stylish welcome message with colors and emojis
+    cout << "\033[1;34m@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\033[0m" << endl;
+    cout << "\033[1;35m||                                                                                          ||\033[0m" << endl;
+    cout << "\033[1;32m||                                        WELCOME TO THE                                    ||\033[0m" << endl;
+    cout << "\033[1;36m||                                                                                          ||\033[0m" << endl;
+    cout << "\033[1;33m||                                  BANK ATM MANAGEMENT SYSTEM                              ||\033[0m" << endl;
+    cout << "\033[1;34m||                                                                                          ||\033[0m" << endl;
+    cout << "\033[1;34m||                                                                                          ||\033[0m" << endl;
+    cout << "\033[1;34m@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\033[0m" << endl;
+
+  // Optional - Add a brief animation or delay if desired
+cout << "\033[1;34m----------------------------------------------------------------------------------------------\033[0m" << endl;
+cout << "\033[1;93m                               Press Enter to start your session                             \033[0m" << endl;
+    
+    cin.get();  // Wait for user input
+>>>>>>> 0d228b6a91dd6f8e36d926768b2f7c1bf4c5ad23
 }
 
 
 void displayMainMenu() {
-    cout << "\nATM MAIN MENU" << endl;
-    cout << "1. Check Account Balance" << endl;
-    cout << "2. Deposit Funds" << endl;
-    cout << "3. Withdraw Funds" << endl;
-    cout << "4. View Transaction History" << endl;
-    cout << "5. Exit" << endl;
+    cout << "\033[1;36m                               ~~~~~~~ ATM MAIN MENU ~~~~~~~                                                   "<<endl;
+    cout << "\033[1;37m==============================================================================================\033[0m" << endl;
+    cout << "\033[1;36m  [1] Check Account Balance                                                                   \033[0m" << endl;
+    cout << "\033[1;36m  [2] Deposit Funds                                                                           \033[0m" << endl;
+    cout << "\033[1;36m  [3] Withdraw Funds                                                                          \033[0m" << endl;
+    cout << "\033[1;36m  [4] View Transaction History                                                                \033[0m" << endl;
+    cout << "\033[1;36m  [5] Exit                                                                                    \033[0m" << endl;
+    cout << "\033[1;37m==============================================================================================\033[0m" << endl;
 }
 
 Account* authenticateUser(ATM& atm) {
@@ -109,7 +147,11 @@ Account* authenticateUser(ATM& atm) {
     int attempts = 3;
 
     while (attempts > 0) {
-        cout << "\nPlease enter your account number: ";
+      
+cout << "\033[1;93m                             kindly enter your account number below                  \033[0m" << endl;
+   cout << "\033[1;34m----------------------------------------------------------------------------------------------\033[0m" << endl;
+cout << "> ";
+
         getline(cin, accountNumber);
 
         cout << "Enter your PIN: ";
@@ -117,7 +159,7 @@ Account* authenticateUser(ATM& atm) {
 
         Account* account = atm.findAccount(accountNumber);
         if (account && account->verifyPin(pin)) {
-            cout << "\nAuthentication successful. Welcome!" << endl;
+             cout << "\033[1;33m----------------------------Authentication successful. Welcome!-------------------------------\033[0m" << endl;
             return account;
         }
 
@@ -164,7 +206,7 @@ void handleDeposit(ATM& atm, Account* account) {
         account->addTransaction(new Transaction("Deposit", amount));
         atm.enqueueDeposit(account);
         
-        cout << "\nDeposit successful!" << endl;
+          cout << "\033[1;34m----------------------------------------Deposit successful!----------------------------------------------\033[0m" << endl;
         cout << "New Balance: " << utils::formatCurrency(account->getBalance()) << endl;
     } else {
         cout << "Deposit canceled." << endl;
@@ -186,7 +228,7 @@ void handleWithdrawal(ATM& atm, Account* account) {
     clearInputBuffer();
 
     if (amount > account->getBalance()) {
-        cout << "\nInsufficient funds. Your current balance is " 
+        cout << "\nInsufficient funds:( Your current balance is " 
              << utils::formatCurrency(account->getBalance()) << endl;
         return;
     }
@@ -203,11 +245,11 @@ void handleWithdrawal(ATM& atm, Account* account) {
         account->addTransaction(new Transaction("Withdrawal", amount));
         atm.enqueueWithdrawal(account);
         
-        cout << "\nWithdrawal successful!" << endl;
-        cout << "Please take your cash." << endl;
+         cout << "\033[1;34m----------------------------------------Withdrawal successful!--------------------------------------------\033[0m" << endl;
+        cout << "Please take your cash:)" << endl;
         cout << "New Balance: " << utils::formatCurrency(account->getBalance()) << endl;
     } else {
-        cout << "Withdrawal canceled." << endl;
+        cout << "Withdrawal canceled:(" << endl;
     }
 }
 
