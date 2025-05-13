@@ -17,5 +17,4 @@ This project implements a simple ATM system using:
 3. **Array**: For storing account data (dynamic array implementation)
 
 ## How to Build and Run
-1. Clone the repository
-2. Compile the project:
+1. Compile the project

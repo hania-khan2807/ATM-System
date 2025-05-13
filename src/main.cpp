@@ -82,10 +82,18 @@ int main() {
 }
 
 void displayWelcomeScreen() {
-    cout << "====================================" << endl;
-    cout << "      WELCOME TO BANK ATM SYSTEM    " << endl;
-    cout << "====================================" << endl << endl;
+    system("cls"); // For Windows to clear the terminal (use "clear" on Linux/Mac)
+    cout << "==============================================================" << endl;
+    cout << "||                                                          ||" << endl;
+    cout << "||                 🌟  WELCOME TO  🌟                         ||" << endl;
+    cout << "||                                                          ||" << endl;
+    cout << "||             💳  BANK ATM MANAGEMENT SYSTEM  💳            ||" << endl;
+    cout << "||                                                          ||" << endl;
+    cout << "||               Powered by C++ and OOP 🧠                  ||" << endl;
+    cout << "||                                                          ||" << endl;
+    cout << "==============================================================" << endl << endl;
 }
+
 
 void displayMainMenu() {
     cout << "\nATM MAIN MENU" << endl;
