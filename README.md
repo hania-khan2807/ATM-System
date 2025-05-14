@@ -18,3 +18,4 @@ This project implements a simple ATM system using:
 
 ## How to Build and Run
 1. Compile the project
+2-clone the repository
